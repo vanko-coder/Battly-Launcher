@@ -4,11 +4,11 @@
 title = "Battly Launcher"
 
 [ejs.landing]
-mediaGitHubURL = "#"
+mediaGitHubURL = "https://www.battly.site"
 mediaXURL = "#"
 mediaInstagramURL = "#"
 mediaYouTubeURL = "#"
-mediaDiscordURL = "#"
+mediaDiscordURL = "https://discord.battly.site"
 
 [ejs.settings]
 sourceGithubLink = "#"
