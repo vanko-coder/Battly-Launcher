@@ -3022,6 +3022,11 @@ input:checked + .toggleSwitchSlider:before {
     right: 95px;
     text-align: right;
     -webkit-user-select: initial;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Social media icon content container. */
