@@ -1,7 +1,9 @@
 "use strict";
 /**
- * @author TECNO BROS
- 
+ * This code is distributed under the CC-BY-NC 4.0 license:
+ * https://creativecommons.org/licenses/by-nc/4.0/
+ *
+ * Original author: Luuxis
  */
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -89,3 +91,4 @@ class status {
     }
 }
 exports.default = status;
+//# sourceMappingURL=status.js.map
