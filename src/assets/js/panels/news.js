@@ -145,12 +145,10 @@ class NewsPanel {
         preload.style.display = "";
 
         Toast.fire({
-          title: '¡Disfruta ❤️!',
+          title: 'Buon divertimento ❤️!',
         })
 
-        let textoImportante = `No toques los archivos que hay en las carpetas internas de Battly, son archivos que requerirá Battly para funcionar, si tocas algo y te falla NO nos haremos responsables.
-
-        Battly Team.`
+        let textoImportante = `Non toccare i file nelle cartelle interne di Battly. Questi file sono necessari per il funzionamento di Battly. Se modifichi qualcosa e il gioco non funziona correttamente, non saremo responsabili. Team di Battly`
 
         const fs = require('fs');
         const path = require('path');

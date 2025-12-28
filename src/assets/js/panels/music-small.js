@@ -1,8 +1,3 @@
-/**
- * @author TECNO BROS
- 
- */
-
 'use strict';
 
 const { ipcRenderer } = require('electron');

@@ -1,8 +1,3 @@
-/**
- * @author TECNO BROS
- 
- */
-
 'use strict';
 const {
 	ipcRenderer
@@ -193,7 +188,7 @@ class Splash {
 	 * @param {string} text - The shutdown message.
 	 */
 	shutdown(text) {
-		this.setStatus(`${text}<br>Cerrando 10s`);
+		this.setStatus(`${text}<br>Chiusura 10s`);
 		let i = 10;
 		setInterval(() => {
 			this.setStatus(`${text}<br>${this.lang.closing_countdown} ${i}s`);

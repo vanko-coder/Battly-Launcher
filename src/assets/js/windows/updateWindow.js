@@ -1,8 +1,3 @@
-/**
- * @author TECNO BROS
- 
- */
-
 "use strict";
 const electron = require("electron");
 const path = require("path");
@@ -22,7 +17,7 @@ function destroyWindow() {
 async function createWindow() {
     destroyWindow();
     updateWindow = new electron.BrowserWindow({
-        title: "Iniciando Battly",
+        title: "Avvio di Battly",
         width: 400,
         height: 500,
         resizable: false,

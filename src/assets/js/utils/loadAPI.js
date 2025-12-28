@@ -1,8 +1,3 @@
-/**
- * @author TECNO BROS
- 
- */
-
 const pkg = require('../package.json');
 let url = pkg.user ? `${pkg.url}/${pkg.user}` : pkg.url
 

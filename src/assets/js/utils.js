@@ -1,8 +1,3 @@
-/**
- * @author TECNO BROS
- 
- */
-
 import config from './utils/config.js';
 import database from './utils/database.js';
 import logger from './utils/logger.js';
@@ -33,7 +28,7 @@ async function addAccount(data) {
     let div = document.createElement("div");
     div.classList.add("account");
     div.id = data.uuid;
-    console.log(`✅ Cuenta: ${div.id} agregada`)
+    console.log(`✅ Account: ${div.id} aggiunto`)
     div.innerHTML = `
         <img class="account-image mc-face-viewer-8x">
         <div class="account-name" id="user-name">${data.name}</div>
@@ -45,7 +40,7 @@ async function addAccount(data) {
 }
 
 function accountSelect(uuid) {
-    console.log(`✅ Cuenta seleccionada: ${uuid}`)
+    console.log(`✅ Account selezionato: ${uuid}`)
     let account = document.getElementById(uuid);
     let activeAccount = document.querySelector('.active-account')
 

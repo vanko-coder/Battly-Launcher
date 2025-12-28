@@ -1,8 +1,3 @@
-/**
- * @author TECNO BROS
- 
- */
-
 const { app, ipcMain, protocol, BrowserWindow, shell, ipcRenderer } = require('electron');
 const { Microsoft } = require('./assets/js/libs/mc/Index');
 const { autoUpdater } = require('electron-updater')
@@ -39,7 +34,7 @@ socket.on('notificacion', async (data) => {
             </visual>
             <actions>
                 <action
-                    content="Abrir"
+                    content="Apri"
                     arguments="${url}"
                     activationType="protocol" />
             </actions>
@@ -72,17 +67,17 @@ socket.on('solicitudAmistad', async (data) => {
         <toast>
             <visual>
                 <binding template="ToastGeneric">
-                    <text>Solicitud de amistad</text>
-                    <text>${username} te ha enviado una solicitud de amistad.</text>
+                    <text>Richiesta di amicizia</text>
+                    <text>${username} ti ha inviato una richiesta di amicizia.</text>
                 </binding>
             </visual>
             <actions>
                 <action
-                    content="Aceptar"
+                    content="Accetta"
                     arguments="${username}"
                     activationType="protocol" />
                 <action
-                    content="Rechazar"
+                    content="Rifiuta"
                     arguments="${username}"
                     activationType="protocol" />
             </actions>
@@ -90,8 +85,8 @@ socket.on('solicitudAmistad', async (data) => {
         });
     } else {
         notification = new Notification({
-            title: "Solicitud de amistad",
-            body: `${username} te ha enviado una solicitud de amistad.`,
+            title: "Richiesta di amicizia",
+            body: `${username} ti ha inviato una richiesta di amicizia.`,
             icon: path.join(__dirname, '/assets/images/icon.png'),
             actions: [
                 { type: 'button', text: 'Aceptar', },
@@ -285,19 +280,19 @@ const { platform } = require('os');
 let client = new rpc.Client({ transport: 'ipc' });
 
 ipcMain.on('new-status-discord', async () => {
-    client.login({ clientId: '917866962523152404' });
+    client.login({ clientId: '1424450531937620058' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
             activity: {
-                details: 'En el menú de inicio',
+                details: 'Nel menu di avvio',
                 assets: {
                     large_image: 'battly_512',
                     large_text: 'Battly Launcher',
                 },
                 buttons: [
-                    { label: '👥 Discord', url: "https://discord.gg/tecno-bros-885235460178342009" },
-                    { label: '⏬ Descargar', url: "https://battlylauncher.com" }
+                    { label: '👥 Discord', url: "https://discord.battly.site" },
+                    { label: '⏬ Scarica', url: "https://www.battly.site" }
                 ],
                 instance: false,
                 timestamps: {
@@ -322,7 +317,7 @@ ipcMain.on('new-status-discord-jugando', async (event, status) => {
 
     if (client) await client.destroy();
     client = new rpc.Client({ transport: 'ipc' });
-    client.login({ clientId: '917866962523152404' });
+    client.login({ clientId: '1424450531937620058' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
@@ -335,8 +330,8 @@ ipcMain.on('new-status-discord-jugando', async (event, status) => {
                     large_text: 'Battly Launcher',
                 },
                 buttons: [
-                    { label: '👥 Discord', url: "https://discord.gg/tecno-bros-885235460178342009" },
-                    { label: '⏬ Descargar', url: "https://battlylauncher.com" }
+                    { label: '👥 Discord', url: "https://discord.battly.site" },
+                    { label: '⏬ Scarica', url: "https://www.battly.site" }
                 ],
                 instance: false,
                 timestamps: {
@@ -360,19 +355,19 @@ ipcMain.on('new-notification', async (event, info) => {
 ipcMain.on('delete-and-new-status-discord', async () => {
     if (client) client.destroy();
     client = new rpc.Client({ transport: 'ipc' });
-    client.login({ clientId: '917866962523152404' });
+    client.login({ clientId: '1424450531937620058' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
             activity: {
-                details: 'En el menú de inicio',
+                details: 'Nel menu di avvio',
                 assets: {
                     large_image: 'battly_512',
                     large_text: 'Battly Launcher',
                 },
                 buttons: [
-                    { label: '👥 Discord', url: "https://discord.gg/tecno-bros-885235460178342009" },
-                    { label: '⏬ Descargar', url: "https://battlylauncher.com" }
+                    { label: '👥 Discord', url: "https://discord.battly.site" },
+                    { label: '⏬ Scarica', url: "https://www.battly.site" }
                 ],
                 instance: false,
                 timestamps: {

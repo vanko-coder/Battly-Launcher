@@ -1,8 +1,3 @@
-/**
- * @author TECNO BROS
- 
- */
-
 class Lang {
   async GetLang() {
     let langLocalStorage = localStorage.getItem("lang") ? localStorage.getItem("lang") : "en";

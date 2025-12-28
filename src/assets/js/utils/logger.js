@@ -1,8 +1,3 @@
-/**
- * @author TECNO BROS
- 
- */
-
 let console_log = console.log;
 let console_info = console.info;
 let console_warn = console.warn;
@@ -49,7 +44,7 @@ class logger {
             console_error.call(console, `%c[${name}]:`, `color: ${color};`, value);
             
             if (typeof value === 'object') value = JSON.stringify(value);
-            consoleOutput += `[ERROR] ${new Date().toISOString()} - ${value}\n`;
+            consoleOutput += `[ERRORE] ${new Date().toISOString()} - ${value}\n`;
         };
     }
 }

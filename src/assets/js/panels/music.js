@@ -1,4 +1,3 @@
-
 'use strict';
 
 const { ipcMain, ipcRenderer } = require('electron');
@@ -329,7 +328,7 @@ class Music {
                 const audioFormat = info.formats.find(format => format.mimeType.includes('audio/mp4'));
       
                 if (!audioFormat) {
-                  console.error("No se encontró un formato de audio adecuado");
+                  console.error("Non è stato trovato alcun formato audio adatto");
                   return;
                 }
       

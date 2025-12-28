@@ -1,7 +1,3 @@
-/**
- * @author TECNO BROS
- */
-
 "use strict";
 const electron = require("electron");
 const path = require("path");
@@ -118,7 +114,7 @@ async function createWindow() {
                     }
             }
         }).catch((error) => {
-            console.error('Error al ejecutar JavaScript:', error);
+            console.error('Errore durante l\'esecuzione di JavaScript:', error);
         });
     });
 

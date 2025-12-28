@@ -1,8 +1,3 @@
-/**
- * @author TECNO BROS
- 
- */
-
 class database {
     async init() {
         this.db = await new Promise((resolve) => {
@@ -67,7 +62,7 @@ class database {
                 }
             });
         } else {
-            return Promise.reject(new Error('Invalid store or missing "get" method.'));
+            return Promise.reject(new Error('Archivio non valido o metodo "get" mancante.'));
         }
     }
 
@@ -93,7 +88,7 @@ class database {
                     resolve(cursor.update(cursor.value));
                 }
             } else {
-                resolve("Object store or openCursor method not found");
+                resolve("Archivio oggetti o metodo openCursor non trovato");
             }
         });
     }
