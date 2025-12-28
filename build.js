@@ -10,9 +10,9 @@ async function obfuscateFile(filePath) {
         const code = await fs.readFile(filePath, 'utf-8');
         const obfuscatedCode = obfuscator.obfuscate(code, { /* opciones de obfuscator */ }).getObfuscatedCode();
         await fs.writeFile(filePath, obfuscatedCode);
-        console.log(`✅ Codice offuscato correttamente: ${filePath}`);
+        console.log(`✅ Código obfuscado correctamente: ${filePath}`);
     } catch (error) {
-        console.error(`Errore durante l'offuscamento del file ${filePath}`, error);
+        console.error(`Error al obfuscar el archivo ${filePath}`, error);
     }
 }
 
@@ -26,9 +26,9 @@ async function obfuscateSrc() {
         const jsFiles = files.filter(file => path.extname(file) === '.js');
 
         // Obfuscar cada archivo .js
-        await Promise.all(jsFiles.map(file => obfuscateFile(path.join(srcPath, file))));
+        //await Promise.all(jsFiles.map(file => obfuscateFile(path.join(srcPath, file))));
     } catch (error) {
-        console.error('Errore durante l\'offuscamento del codice', error);
+        console.error('Error al obfuscar el código', error);
     }
 }
 // Ejecutar la obfuscación antes de construir
@@ -52,17 +52,18 @@ obfuscateSrc().then(() => {
             directories: { "output": "dist" },
             compression: 'maximum',
             asar: false,
-            //asar unpack de 7zip-bin
-            asarUnpack: [
-                "node_modules/7zip-bin/**/*",
-                "node_modules/7zip/**/*",
-            ],
             win: {
                 icon: "./src/assets/images/icon.ico",
-                target: [{
-                    target: "nsis",
-                    arch: ["x64", "ia32"]
-                }]
+                target: [
+                    {
+                        target: "nsis",
+                        arch: ["x64", "ia32"]
+                    },
+                    // {
+                    //     target: "appx",
+                    //     arch: ["x64", "arm64"]
+                    // }
+                ]
             },
             nsis: {
                 oneClick: false,
@@ -84,43 +85,44 @@ obfuscateSrc().then(() => {
             },
             linux: {
                 icon: "./src/assets/images/icon.png",
-                target: [{
-                    target: "AppImage",
-                    arch: ["x64"]
-                }, {
-                    target: "tar.gz",
-                    arch: ["x64"]
-                },
-                {
-                    target: "deb",
-                    arch: ["x64"]
-                },
-                {
-                    target: "rpm",
-                    arch: ["x64"]
-                },
-                {
-                    target: "AppImage",
-                    arch: ["armv7l"]
-                },
-                {
-                    target: "tar.gz",
-                    arch: ["armv7l"]
-                },
-                {
-                    target: "deb",
-                    arch: ["armv7l"]
-                },
-                {
-                    target: "rpm",
-                    arch: ["armv7l"]
-                }
+                target: [
+                    {
+                        target: "AppImage",
+                        arch: ["x64"]
+                    }, {
+                        target: "tar.gz",
+                        arch: ["x64"]
+                    },
+                    {
+                        target: "deb",
+                        arch: ["x64"]
+                    },
+                    {
+                        target: "rpm",
+                        arch: ["x64"]
+                    },
+                    {
+                        target: "AppImage",
+                        arch: ["armv7l"]
+                    },
+                    {
+                        target: "tar.gz",
+                        arch: ["armv7l"]
+                    },
+                    {
+                        target: "deb",
+                        arch: ["armv7l"]
+                    },
+                    {
+                        target: "rpm",
+                        arch: ["armv7l"]
+                    }
                 ]
             }
         }
     }).then(() => {
-        console.log('✅ La compilazione è riuscita.')
+        console.log('✅ El build se ha realizado correctamente.')
     }).catch(err => {
-        console.error('Errore durante la compilazione', err)
+        console.error('Error al realizar el build', err)
     })
 });
